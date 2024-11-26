@@ -21,14 +21,19 @@ string_upcase_mapped = string_uppercase.map { |chars| alphabet_link_number[chars
 p string_upcase_mapped
   
 #need to add  shift num
-# need to loop through the array somehow
-shifted_num = string_upcase_mapped.map {|number| number + num}
-p shifted_num
-# figure out how to wrap
-if shifted_num >= 26
-  num = 1
+# need to loop through the array somehow and sure wrapping z-a
+
+shifted_num = string_upcase_mapped.map do |number|
+  number.nil? ? nil : ((number + num - 1) % 26) + 1
 end
-  
+p shifted_num
+
+#convert back to letters
+number_to_alphabet = alphabet_link_number.invert #switch hash key and value
+
+shifted_word = shifted_num.map {|words| number_to_alphabet[words]} #I want array where numbers are equal to alph-num hash keys
+p shifted_word.join
+
 end
 
-caesar_cipher("hello", 10)
+caesar_cipher("zoo shoe boo", 2)
