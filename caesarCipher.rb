@@ -12,7 +12,6 @@ def caesar_cipher(string, num)
 alphabet = ("A".."Z").to_a
 numbers = (1..26).to_a
 alphabet_link_number = alphabet.zip(numbers).to_h #new has from alphabet/num where a=1 etc
-# p alphabet_link_number
 
 string_input = string.split("")
 string_uppercase = string_input.map {|string| string.upcase}
