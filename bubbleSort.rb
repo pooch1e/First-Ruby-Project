@@ -1,4 +1,6 @@
-#Build a method #bubble_sort that takes an array and returns a sorted array. It must use the bubble sort methodology
+# frozen_string_literal: true
+
+# Build a method #bubble_sort that takes an array and returns a sorted array. It must use the bubble sort methodology
 #
 #
 #
@@ -10,16 +12,15 @@ def bubble_sort(sortme)
   loop do
     swapped = false
     (a_length - 1).times do |i|
-     if sortme[i] > sortme[i+1]
-       sortme[i], sortme[i+1] = sortme[i+1], sortme[i]
-       swapped = true
-     end
+      if sortme[i] > sortme[i + 1]
+        sortme[i], sortme[i + 1] = sortme[i + 1], sortme[i]
+        swapped = true
+      end
     end
-    break if not swapped
+    break unless swapped
   end
-  
+
   p sortme
 end
 
 bubble_sort(bubbles)
-
